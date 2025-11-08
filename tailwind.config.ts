@@ -57,6 +57,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "encryption-pulse": "hsl(var(--encryption-pulse))",
+        "encryption-glow": "hsl(var(--encryption-glow))",
+        "secure-green": "hsl(var(--secure-green))",
+        "warning-amber": "hsl(var(--warning-amber))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +84,41 @@ export default {
             height: "0",
           },
         },
+        "pulse-encryption": {
+          "0%, 100%": {
+            opacity: "1",
+            boxShadow: "0 0 0 0 hsl(var(--encryption-pulse) / 0.7)",
+          },
+          "50%": {
+            opacity: "0.8",
+            boxShadow: "0 0 0 8px hsl(var(--encryption-pulse) / 0)",
+          },
+        },
+        "wave-encryption": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "fade-in-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-encryption": "pulse-encryption 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "wave-encryption": "wave-encryption 3s ease-in-out infinite",
+        "fade-in-up": "fade-in-up 0.5s ease-out",
       },
     },
   },
